@@ -1,0 +1,21 @@
+@model ReminderSchedulerApp.Models.Reminder
+
+<h2 class="text-xl font-bold mb-4">Add New Reminder</h2>
+
+<form asp-action="Create" method="post" class="space-y-4 max-w-md">
+    <div>
+        <label asp-for="Message" class="block">Message</label>
+        <input asp-for="Message" class="border p-2 w-full rounded" />
+        <span asp-validation-for="Message" class="text-red-500"></span>
+    </div>
+
+    <div>
+        <label asp-for="DelayMinutes" class="block">Delay (minutes)</label>
+        <input asp-for="DelayMinutes" class="border p-2 w-full rounded" type="number" />
+        <span asp-validation-for="DelayMinutes" class="text-red-500"></span>
+    </div>
+
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+        Set Reminder
+    </button>
+</form>

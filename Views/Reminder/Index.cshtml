@@ -1,0 +1,27 @@
+@model IEnumerable<ReminderSchedulerApp.Models.Reminder>
+
+<h2 class="text-xl font-bold mb-4">All Reminders</h2>
+
+<a href="/Reminder/Create" class="inline-block bg-green-600 text-white px-4 py-2 rounded mb-4">
+    Add New Reminder
+</a>
+
+<table class="table-auto w-full border">
+    <thead>
+        <tr>
+            <th class="border px-4 py-2">Message</th>
+            <th class="border px-4 py-2">Delay</th>
+            <th class="border px-4 py-2">Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reminder in Model)
+        {
+            <tr>
+                <td class="border px-4 py-2">@reminder.Message</td>
+                <td class="border px-4 py-2">@reminder.DelayMinutes minutes</td>
+                <td class="border px-4 py-2">@reminder.CreatedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>
